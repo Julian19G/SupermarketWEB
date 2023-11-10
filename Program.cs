@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using SupermarketWEB.Data;
+
 namespace SupermarketWEB
 {
     public class Program
@@ -8,6 +12,10 @@ namespace SupermarketWEB
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<SupermarketContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB"))
+            );
 
             var app = builder.Build();
 

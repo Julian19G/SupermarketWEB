@@ -1,23 +1,24 @@
 ﻿@page
 @model SupermarketWEB.Pages.PayMode.IndexModel
 @{
-    ViewData["Titlte"] = "Index PayMode";
+    ViewData["Title"] = "Index PayMode";
 }
+
 <h1>Index PayMode</h1>
-<table class="Table">
+<table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PayMode[0].Name)
+                @Html.DisplayNameFor(model => model.PayMod[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PayMode[0].Description)
+                @Html.DisplayNameFor(model => model.PayMod[0].Description)
             </th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.PayMode)
+        @foreach (var item in Model.PayMod)
         {
             <tr>
                 <td>

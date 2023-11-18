@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 using SupermarketWEB.Models;
 
@@ -24,7 +25,7 @@ namespace SupermarketWEB.Pages.PayMode
                 return NotFound();
             }
 
-            var paymodes = await _context.PayMod.FirstOrDefaultAsync(m => m.Id == id);
+            var paymodes = await _context.PayMod.FirstOrDefaultAsync(x => x.Id == id);
 
             if (paymodes == null)
             {
